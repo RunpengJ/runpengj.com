@@ -1,6 +1,6 @@
 // Site configuration
 export const siteConfig = {
-  name: "Luke J.",
+  name: "Runpeng Jian",
   title: "Aspiring Machine Learning Engineer | Research Enthusiast",
   description: "Computer Science student with interests in machine learning, large-scale systems, and applied research.",
   
@@ -22,7 +22,7 @@ export const siteConfig = {
   
   // Hero section
   hero: {
-    greeting: "Hi, I'm Luke J.",
+    greeting: "Hi, I'm Runpeng Jian",
     title: "Aspiring Machine Learning Engineer | Research Enthusiast",
     resumeLink: "#resume"
   },
