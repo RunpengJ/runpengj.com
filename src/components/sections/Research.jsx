@@ -11,13 +11,19 @@ const Research = () => {
       id="research" 
       title="Research"
     >
-      <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 text-left">
+      <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-3xl mx-auto">
+        My research contributions include peer-reviewed workshop papers and poster presentations, focusing on machine learning applications and systems optimization.
+      </p>
+      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 text-left">
         {research.map((item) => (
           <ResearchCard
             key={item.id}
             title={item.title}
             description={item.description}
-            type={item.type}
+            authors={item.authors}
+            venue={item.venue}
+            year={item.year}
+            status={item.status}
             className="h-full"
           />
         ))}

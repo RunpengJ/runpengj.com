@@ -1,19 +1,50 @@
 import PropTypes from 'prop-types';
 
 /**
- * Research card component with distinct styling and research badge
+ * Research card component with detailed academic layout
  */
-const ResearchCard = ({ title, description, type, className = "" }) => {
+const ResearchCard = ({ title, description, authors, venue, year, status, className = "" }) => {
   return (
-    <div className={`bg-white border-l-4 border-l-indigo-600 border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 relative ${className}`}>
-      <div className="absolute top-4 right-4 bg-indigo-50 text-indigo-700 text-xs px-3 py-1 rounded-full font-semibold">
-        {type || 'Research'}
-      </div>
-      <h3 className="text-xl font-semibold mb-3 text-gray-900 pr-24">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
-      <div className="mt-4 border-t border-gray-100 pt-4">
-        <span className="text-xs text-gray-500 uppercase tracking-wide">Academic Research</span>
-      </div>
+    <div className={`bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 ${className}`}>
+      <h3 className="text-xl font-semibold mb-4 text-gray-900 leading-tight">{title}</h3>
+      
+      {authors && (
+        <div className="flex items-center mb-3 text-gray-600">
+          <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+          </svg>
+          <span className="text-sm">{authors}</span>
+        </div>
+      )}
+      
+      {venue && (
+        <div className="flex items-center mb-3 text-gray-600">
+          <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1z" clipRule="evenodd" />
+          </svg>
+          <span className="text-sm">{venue}</span>
+        </div>
+      )}
+      
+      {year && (
+        <div className="flex items-center mb-4 text-gray-600">
+          <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
+          </svg>
+          <span className="text-sm">{year}</span>
+        </div>
+      )}
+      
+      <p className="text-gray-600 leading-relaxed mb-4 italic">{description}</p>
+      
+      {status && (
+        <div className="flex items-center text-gray-500">
+          <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1z" clipRule="evenodd" />
+          </svg>
+          <span className="text-sm">{status}</span>
+        </div>
+      )}
     </div>
   );
 };
@@ -21,7 +52,10 @@ const ResearchCard = ({ title, description, type, className = "" }) => {
 ResearchCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  type: PropTypes.string,
+  authors: PropTypes.string,
+  venue: PropTypes.string,
+  year: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  status: PropTypes.string,
   className: PropTypes.string
 };
 
