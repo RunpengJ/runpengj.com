@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 /**
- * Reusable Section wrapper component with consistent styling
+ * Reusable Section wrapper component with responsive styling and proper centering
  */
 const Section = ({ 
   id, 
@@ -9,15 +9,15 @@ const Section = ({
   children, 
   className = "", 
   background = "white",
-  maxWidth = "max-w-5xl"
+  maxWidth = "max-w-6xl"
 }) => {
   const bgClass = background === "gray" ? "bg-slate-50" : "bg-white";
   
   return (
-    <section id={id} className={`${bgClass} py-24 px-6 ${className}`}>
-      <div className={`${maxWidth} mx-auto`}>
+    <section id={id} className={`${bgClass} py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 ${className}`}>
+      <div className={`${maxWidth} mx-auto text-center`}>
         {title && (
-          <h2 className="text-3xl font-bold text-teal-600 mb-10">{title}</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-600 mb-6 sm:mb-8 md:mb-10">{title}</h2>
         )}
         {children}
       </div>
