@@ -71,7 +71,7 @@ const SkillsSection = () => {
   return (
     <Section 
       id="skills" 
-      title="Technical Skills"
+      title="Skills"
       background="gray"
     >
       <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto transition-colors duration-300">

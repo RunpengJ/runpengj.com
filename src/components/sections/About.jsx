@@ -26,7 +26,9 @@ const About = () => {
         {/* About Text Content */}
         <div className="flex-1 max-w-2xl">
           <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 dark:text-gray-400 text-left transition-colors duration-300">
-            {siteConfig.about.description}
+            {siteConfig.about.description.map((paragraph, index) => (
+              <p key={index} className="mb-4">{paragraph}</p>
+            ))}
           </p>
         </div>
       </div>

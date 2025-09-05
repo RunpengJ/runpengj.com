@@ -15,24 +15,28 @@ export const siteConfig = {
   
   // Social links
   socialLinks: {
-    github: "https://github.com/yourgithub",
-    linkedin: "https://linkedin.com/in/yourlinkedin",
-    email: "youremail@example.com"
+    github: "https://github.com/RunpengJ",
+    linkedin: "https://www.linkedin.com/in/runpengjian/",
+    email: "runpengj@gmail.com"
   },
   
   // Hero section
   hero: {
-    greeting: "Hi, I'm Runpeng Jian",
-    title: "Aspiring Machine Learning Engineer | Research Enthusiast",
+    greeting: "Hi, I'm Runpeng",
+    title: "Software Engineer | AI Engineer | Machine Learning Engineer",
     resumeLink: "#resume"
   },
   
   // About section
   about: {
     title: "About Me",
-    description: "I am a Computer Science student with interests in machine learning, large-scale systems, and applied research. I enjoy building impactful projects and exploring optimizations in AI systems."
+    description: [
+      "Hi, I'm Runpeng Jian. I'm currently pursuing my Master's in Computer Science at UC San Diego, specializing in AI.",
+      "I'm passionate about software engineering – building robust, scalable applications and solving complex problems through clean code. I also have a strong interest in machine learning, especially integrating AI capabilities into real-world software systems. I love turning ideas into working projects, whether it's full-stack applications or ML solutions. ",
+      "When I'm not coding, you'll find me hiking, playing basketball, gaming, or watching movies."
+    ]
   },
-  
+
   // Contact section
   contact: {
     title: "Get in Touch",
