@@ -11,7 +11,7 @@ const About = () => {
       title={siteConfig.about.title}
       maxWidth="max-w-4xl"
     >
-      <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-slate-700 text-left max-w-3xl mx-auto">
+      <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 text-left max-w-3xl mx-auto">
         {siteConfig.about.description}
       </p>
     </Section>

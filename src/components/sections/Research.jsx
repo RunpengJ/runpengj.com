@@ -1,5 +1,5 @@
 import Section from '../ui/Section';
-import Card from '../ui/Card';
+import ResearchCard from '../ui/ResearchCard';
 import { research } from '../../data/research';
 
 /**
@@ -13,11 +13,11 @@ const Research = () => {
     >
       <div className="grid gap-4 sm:gap-6 lg:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 text-left">
         {research.map((item) => (
-          <Card
+          <ResearchCard
             key={item.id}
             title={item.title}
             description={item.description}
-            badge={item.type}
+            type={item.type}
             className="h-full"
           />
         ))}

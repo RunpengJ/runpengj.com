@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  */
 const SkillBadge = ({ skill }) => {
   return (
-    <div className="p-4 border border-teal-200 rounded-xl text-center">
+    <div className="p-4 bg-white border border-gray-200 rounded-xl text-center text-gray-700 hover:bg-gray-50 transition-colors duration-200">
       {skill}
     </div>
   );

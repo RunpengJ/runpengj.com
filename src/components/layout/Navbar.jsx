@@ -57,17 +57,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="text-xl font-bold text-teal-600">{siteConfig.name}</div>
+          <div className="text-xl font-bold text-gray-900">{siteConfig.name}</div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-6 text-slate-700 font-medium">
+          <div className="hidden md:flex gap-6 text-gray-700 font-medium">
             {siteConfig.navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`hover:text-teal-600 transition-colors duration-200 ${
-                  activeSection === link.href ? 'text-teal-600' : ''
+                className={`hover:text-gray-900 transition-colors duration-200 focus:outline-none ${
+                  activeSection === link.href ? 'text-gray-900 font-semibold' : ''
                 }`}
               >
                 {link.label}
@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -105,8 +105,8 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 hover:text-teal-600 transition-colors ${
-                  activeSection === link.href ? 'text-teal-600 bg-teal-50' : 'text-slate-700'
+                className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:text-gray-900 transition-colors focus:outline-none ${
+                  activeSection === link.href ? 'text-gray-900 bg-gray-50 font-semibold' : 'text-gray-700'
                 }`}
               >
                 {link.label}

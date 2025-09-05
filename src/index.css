@@ -17,7 +17,7 @@ html {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: #334155; /* slate-700 */
+  color: #111827; /* gray-900 */
   background-color: #ffffff;
   min-width: 320px;
 }
@@ -29,13 +29,13 @@ body {
 
 /* Better focus styles for accessibility */
 *:focus {
-  outline: 2px solid #0d9488; /* teal-600 */
+  outline: 2px solid #111827; /* gray-900 */
   outline-offset: 2px;
 }
 
 /* Improve button accessibility */
 button:focus-visible {
-  outline: 2px solid #0d9488; /* teal-600 */
+  outline: 2px solid #111827; /* gray-900 */
   outline-offset: 2px;
 }
 
@@ -45,14 +45,14 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9; /* slate-100 */
+  background: #f9fafb; /* gray-50 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1; /* slate-300 */
+  background: #d1d5db; /* gray-300 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8; /* slate-400 */
+  background: #9ca3af; /* gray-400 */
 }
