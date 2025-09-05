@@ -11,7 +11,7 @@ const Research = () => {
       id="research" 
       title="Research"
     >
-      <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-3xl mx-auto">
+      <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-3xl mx-auto transition-colors duration-300">
         My research contributions include peer-reviewed workshop papers and poster presentations, focusing on machine learning applications and systems optimization.
       </p>
       <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 text-left">
