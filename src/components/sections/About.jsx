@@ -1,19 +1,35 @@
 import Section from '../ui/Section';
 import { siteConfig } from '../../data/config';
+import { User } from 'lucide-react';
 
 /**
- * About section component with responsive text sizing
+ * About section component with two-column layout and profile image placeholder
  */
 const About = () => {
   return (
     <Section 
       id="about" 
       title={siteConfig.about.title}
-      maxWidth="max-w-4xl"
+      maxWidth="max-w-5xl"
     >
-      <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 text-left max-w-3xl mx-auto">
-        {siteConfig.about.description}
-      </p>
+      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12">
+        {/* Profile Image Placeholder */}
+        <div className="flex-shrink-0">
+          <div className="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 bg-gray-200 border border-gray-300 rounded-2xl flex items-center justify-center">
+            <div className="text-center text-gray-500">
+              <User className="w-12 h-12 mx-auto mb-2 opacity-50" />
+              <span className="text-sm font-medium">Profile Image</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* About Text Content */}
+        <div className="flex-1 max-w-2xl">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-600 text-left">
+            {siteConfig.about.description}
+          </p>
+        </div>
+      </div>
     </Section>
   );
 };
