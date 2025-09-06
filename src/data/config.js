@@ -23,7 +23,7 @@ export const siteConfig = {
   // Hero section
   hero: {
     greeting: "Hi, I'm Runpeng",
-    title: "Software Engineer | AI Engineer | Machine Learning Engineer",
+    title: "Software Engineer | Machine Learning Engineer",
     resumeLink: "#resume",
     profile: "/hero/profile.png" // Path to profile picture
   },
