@@ -4,7 +4,7 @@ import { Image, Github, ExternalLink } from 'lucide-react';
 /**
  * Project card component with horizontal layout and image placeholder
  */
-const ProjectCard = ({ title, description, tags, className = "", gradientIndex = 0, githubUrl, liveUrl }) => {
+const ProjectCard = ({ title, description, tags, className = "", gradientIndex = 0, githubUrl, liveUrl, cover }) => {
   // Different gradient styles for variety
   const gradients = [
     "bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-600 dark:to-gray-700",
@@ -17,14 +17,22 @@ const ProjectCard = ({ title, description, tags, className = "", gradientIndex =
   return (
     <div className={`bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-sm dark:shadow-lg dark:shadow-black/10 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-black/20 transition-all duration-300 ${className}`}>
       <div className="flex flex-col sm:flex-row gap-6">
-        {/* Project Image Placeholder */}
+        {/* Image Placeholder or Cover Image */}
         <div className="flex-shrink-0">
+          {cover ? (
+            <img 
+              src={cover} 
+              alt={title}
+              className="min-w-[200px] h-[150px] object-cover border border-gray-200 dark:border-gray-600 rounded-xl"
+            />
+          ) : (
           <div className={`min-w-[200px] h-[150px] ${gradientClass} border border-gray-200 dark:border-gray-600 rounded-xl flex items-center justify-center transition-colors duration-300`}>
             <div className="text-center text-gray-500 dark:text-gray-400 transition-colors duration-300">
               <Image className="w-8 h-8 mx-auto mb-1 opacity-50" />
               <span className="text-xs font-medium">Project Preview</span>
             </div>
           </div>
+          )}
         </div>
         
         {/* Project Content */}
@@ -82,7 +90,8 @@ ProjectCard.propTypes = {
   className: PropTypes.string,
   gradientIndex: PropTypes.number,
   githubUrl: PropTypes.string,
-  liveUrl: PropTypes.string
+  liveUrl: PropTypes.string,
+  cover: PropTypes.string
 };
 
 export default ProjectCard;

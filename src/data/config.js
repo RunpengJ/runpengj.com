@@ -2,8 +2,8 @@
 export const siteConfig = {
   name: "Runpeng Jian",
   title: "Aspiring Machine Learning Engineer | Research Enthusiast",
-  description: "Computer Science student with interests in machine learning, large-scale systems, and applied research.",
-  
+  description: "Computer Science student with interests in software engineering, machine learning, and applied research.",
+
   // Navigation links
   navLinks: [
     { href: "#about", label: "About" },

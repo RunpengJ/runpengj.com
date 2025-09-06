@@ -23,6 +23,7 @@ const Projects = () => {
             gradientIndex={index}
             githubUrl={project.githubUrl}
             liveUrl={project.liveUrl}
+            cover={project.cover}
           />
         ))}
       </div>
