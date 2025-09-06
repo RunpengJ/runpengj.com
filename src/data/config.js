@@ -25,7 +25,7 @@ export const siteConfig = {
     greeting: "Hi, I'm Runpeng",
     title: "Software Engineer | AI Engineer | Machine Learning Engineer",
     resumeLink: "#resume",
-    profile: "../../public/profile.png" // Path to profile picture
+    profile: "/hero/profile.png" // Path to profile picture
   },
   
   // About section
