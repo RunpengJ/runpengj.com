@@ -34,7 +34,7 @@ export const projects = [
     tags: ["Python", "XGBoost", "Gradient Boosting", "NLP"],
     githubUrl: "https://github.com/RunpengJ/Recommendation-System-on-Hawaii-s-Restaurant",
     liveUrl: null,
-    cover: "/public/projects/recsys_hawaiian.png"
+    cover: "/projects/recsys_hawaiian.png"
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ export const projects = [
     tags: ["Python", "Algorithms", "AI"],
     githubUrl: "https://github.com/Yunzhou123/yyz_MAPF_competition",
     liveUrl: null,
-    cover: "/public/projects/mapf.jpg"
+    cover: "/projects/mapf.jpg"
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ export const projects = [
     tags: ["JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/cse110-sp23-group23/Zoltar",
     liveUrl: "https://cse110-sp23-group23.github.io/Zoltar/",
-    cover: "/public/projects/zoltar.png"
+    cover: "/projects/zoltar.png"
   },
   {
     id: 1,
@@ -61,6 +61,6 @@ export const projects = [
     tags: ["Arduino", "C++"],
     githubUrl: "https://github.com/johncmanuel/Xplora",
     liveUrl: null,
-    cover: "/public/projects/xplora.jpg"
+    cover: "/projects/xplora.jpg"
   }
 ];
