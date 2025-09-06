@@ -12,7 +12,7 @@ const Research = () => {
       title="Research"
     >
       <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-3xl mx-auto transition-colors duration-300">
-        My research explores machine learning, deep learning, computer vision, and data privacy
+        My research explores machine learning, deep learning, computer vision, and data privacy.
       </p>
       <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 text-left">
         {research.map((item) => (
