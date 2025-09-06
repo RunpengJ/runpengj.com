@@ -10,14 +10,14 @@ export const siteConfig = {
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
     { href: "#research", label: "Research" },
-    { href: "#skills", label: "Skills" },
-    { href: "#contact", label: "Contact" }
+    { href: "#skills", label: "Skills" }
   ],
   
   // Social links
   socialLinks: {
     github: "https://github.com/RunpengJ",
     linkedin: "https://www.linkedin.com/in/runpengjian/",
+    twitter: "https://twitter.com/runpengjian",
     email: "runpengj@gmail.com"
   },
   
