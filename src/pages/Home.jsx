@@ -1,6 +1,7 @@
 import Layout from '../components/layout/Layout';
 import Hero from '../components/sections/Hero';
 import About from '../components/sections/About';
+import Experience from '../components/sections/Experience';
 import Projects from '../components/sections/Projects';
 import Research from '../components/sections/Research';
 import SkillsSection from '../components/sections/Skills';
@@ -14,6 +15,7 @@ const Home = () => {
     <Layout>
       <Hero />
       <About />
+      <Experience />
       <Projects />
       <Research />
       <SkillsSection />
