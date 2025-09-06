@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, X } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import XIcon from '../icons/XIcon';
 import { siteConfig } from '../../data/config';
 
 /**
@@ -53,7 +54,7 @@ const Hero = () => {
             className="p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
             aria-label="X (Twitter)"
           >
-            <X className="w-6 h-6" />
+            <XIcon className="w-6 h-6" />
           </a>
           <a 
             href={`mailto:${siteConfig.socialLinks.email}`}

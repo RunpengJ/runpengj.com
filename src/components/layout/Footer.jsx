@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, X } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import XIcon from '../icons/XIcon';
 import { siteConfig } from '../../data/config';
 
 /**
@@ -54,7 +55,7 @@ const Footer = () => {
                 className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-300"
                 aria-label="X (Twitter)"
               >
-                <X className="w-5 h-5" />
+                <XIcon className="w-5 h-5" />
               </a>
               <a 
                 href={`mailto:${siteConfig.socialLinks.email}`}
