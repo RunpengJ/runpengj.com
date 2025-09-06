@@ -74,9 +74,9 @@ const SkillsSection = () => {
       title="Skills"
       background="gray"
     >
-      <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto transition-colors duration-300">
+      {/* <p className="text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto transition-colors duration-300">
         Full-stack engineer with expertise in AI/ML systems and scalable applications
-      </p>
+      </p> */}
 
       {/* Category Pills */}
       <div className="flex flex-wrap justify-center gap-3 mb-8">
