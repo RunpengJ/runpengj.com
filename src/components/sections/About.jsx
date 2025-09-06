@@ -11,8 +11,8 @@ const About = () => {
   
   // Placeholder photos - replace with actual photo URLs
   const photos = [
-    { id: 1, src: '/about/1.jpeg', alt: 'Main photo' },
-    { id: 2, src: '/about/2.jpeg', alt: 'Photo 2' },
+    { id: 1, src: '/about/2.jpeg', alt: 'Main photo' },
+    { id: 2, src: '/about/1.jpeg', alt: 'Photo 2' },
     { id: 3, src: '/about/3.jpeg', alt: 'Photo 3' },
     { id: 4, src: '/about/4.jpeg', alt: 'Photo 4' },
   ];

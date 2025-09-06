@@ -1,8 +1,16 @@
 // Projects data
 export const projects = [
   {
+    id: 8,
+    title: "Personal Portfolio Website",
+    description: "Responsive portfolio website built with React and Tailwind CSS, featuring sections for About, Experience, Projects, Research, and Skills. Deployed with GitHub Pages.",
+    tags: ["React", "Tailwind CSS", "Vite"],
+    githubUrl: "https://runpengj.github.io/",
+    cover: "/projects/portfolio.png"
+  },
+  {
     id: 7,
-    title: "Daily Progress Community Platform",
+    title: "HabitHub - Daily Progress Community Platform",
     description: "Community-driven habit tracking platform with forum-style post creation, commenting, upvoting functionality, and real-time updates via WebSocket connections. Built with user authentication and badge system.",
     tags: ["Next.js", "Supabase", "React Query", "PostgreSQL"],
     githubUrl: "https://github.com/RunpengJ/Habithub",
