@@ -23,10 +23,10 @@ const ProjectCard = ({ title, description, tags, className = "", gradientIndex =
             <img 
               src={cover} 
               alt={title}
-              className="min-w-[200px] h-[150px] object-cover border border-gray-200 dark:border-gray-600 rounded-xl"
+              className="w-[200px] h-[150px] object-cover border border-gray-200 dark:border-gray-600 rounded-xl"
             />
           ) : (
-          <div className={`min-w-[200px] h-[150px] ${gradientClass} border border-gray-200 dark:border-gray-600 rounded-xl flex items-center justify-center transition-colors duration-300`}>
+          <div className={`w-[200px] h-[150px] ${gradientClass} border border-gray-200 dark:border-gray-600 rounded-xl flex items-center justify-center transition-colors duration-300`}>
             <div className="text-center text-gray-500 dark:text-gray-400 transition-colors duration-300">
               <Image className="w-8 h-8 mx-auto mb-1 opacity-50" />
               <span className="text-xs font-medium">Project Preview</span>

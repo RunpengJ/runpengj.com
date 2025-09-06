@@ -9,9 +9,51 @@ html {
   background-color: #ffffff;
 }
 
-/* Set html background for dark mode to prevent white overscroll */
+/* Set html and body background for dark mode to prevent white overscroll */
 html.dark {
   background-color: #1f2937; /* gray-800 */
+}
+
+/* Ensure dark background extends to viewport edges during overscroll */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #1f2937; /* gray-800 */
+  }
+}
+
+/* Fix overscroll behavior on iOS devices */
+html.dark::before {
+  content: '';
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #1f2937; /* gray-800 */
+  z-index: -1;
+}
+
+html.dark::after {
+  content: '';
+  position: fixed;
+  bottom: -100vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #1f2937; /* gray-800 */
+  z-index: -1;
+}
+
+/* Fix navbar overscroll in dark mode */
+html.dark nav::before {
+  content: '';
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: rgba(31, 41, 55, 0.95); /* gray-800 with navbar opacity */
+  z-index: -1;
 }
 
 * {
@@ -46,26 +88,16 @@ html.dark body {
   transition: none !important;
 }
 
-/* Better focus styles for accessibility */
+/* Remove focus outlines for cleaner look */
 *:focus {
-  outline: 2px solid #111827; /* gray-900 */
-  outline-offset: 2px;
+  outline: none;
 }
 
-html.dark *:focus {
-  outline: 2px solid #f3f4f6; /* gray-100 */
-  outline-offset: 2px;
-}
-
-/* Improve button accessibility */
-button:focus-visible {
-  outline: 2px solid #111827; /* gray-900 */
-  outline-offset: 2px;
-}
-
-html.dark button:focus-visible {
-  outline: 2px solid #f3f4f6; /* gray-100 */
-  outline-offset: 2px;
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible {
+  outline: none;
 }
 
 /* Custom scrollbar for webkit browsers */

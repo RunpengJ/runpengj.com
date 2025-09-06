@@ -56,7 +56,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-sm dark:shadow-lg dark:shadow-black/20 border-b border-gray-100 dark:border-gray-700 z-50 transition-colors duration-300">
+    <>
+      {/* Dark mode background extender for navbar */}
+      <div className="fixed top-0 left-0 w-full h-16 bg-white dark:bg-gray-800 -translate-y-full dark:translate-y-0 z-40" style={{ height: '100vh', transform: 'translateY(-100vh)' }} />
+      <nav className="fixed top-0 left-0 w-full bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm shadow-sm dark:shadow-lg dark:shadow-black/20 border-b border-gray-100 dark:border-gray-700 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -80,7 +83,7 @@ const Navbar = () => {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="ml-6 p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 dark:focus-visible:ring-gray-400"
+              className="ml-6 p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
               aria-label="Toggle theme"
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -128,7 +131,7 @@ const Navbar = () => {
             {/* Mobile Theme Toggle */}
             <button
               onClick={() => { toggleTheme(); setIsMenuOpen(false); }}
-              className="flex items-center w-full px-3 py-2 rounded-md text-base font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 dark:focus-visible:ring-gray-400"
+              className="flex items-center w-full px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
               aria-label="Toggle theme"
             >
               {isDarkMode ? <Sun className="w-5 h-5 mr-2" /> : <Moon className="w-5 h-5 mr-2" />}
@@ -138,6 +141,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 

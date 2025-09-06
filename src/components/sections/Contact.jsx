@@ -19,7 +19,7 @@ const Contact = () => {
           href={siteConfig.socialLinks.github} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
+          className="p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
           aria-label="GitHub"
         >
           <Github className="w-6 h-6" />
@@ -28,14 +28,14 @@ const Contact = () => {
           href={siteConfig.socialLinks.linkedin} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
+          className="p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
           aria-label="LinkedIn"
         >
           <Linkedin className="w-6 h-6" />
         </a>
         <a 
           href={`mailto:${siteConfig.socialLinks.email}`}
-          className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
+          className="p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300"
           aria-label="Email"
         >
           <Mail className="w-6 h-6" />
