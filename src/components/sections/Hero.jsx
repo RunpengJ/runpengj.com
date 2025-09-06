@@ -10,12 +10,13 @@ const Hero = () => {
       className="flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Profile Picture Placeholder */}
         <div className="mb-6 sm:mb-8">
-          <div className="w-[150px] h-[150px] sm:w-[175px] sm:h-[175px] md:w-[200px] md:h-[200px] mx-auto rounded-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 shadow-lg dark:shadow-lg dark:shadow-black/20 border border-gray-200 dark:border-gray-600 flex items-center justify-center transition-colors duration-300">
-            <span className="text-gray-900 dark:text-gray-100 text-4xl sm:text-5xl md:text-6xl font-bold transition-colors duration-300">
-              {siteConfig.name.split(' ').map(n => n[0]).join('')}
-            </span>
+          <div className="w-[150px] h-[150px] sm:w-[175px] sm:h-[175px] md:w-[200px] md:h-[200px] mx-auto rounded-full shadow-lg dark:shadow-lg dark:shadow-black/20 border border-gray-200 dark:border-gray-600 overflow-hidden transition-colors duration-300">
+            <img 
+              src={siteConfig.hero.profile} 
+              alt={`${siteConfig.name} profile picture`}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
         
