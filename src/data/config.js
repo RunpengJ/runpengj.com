@@ -33,7 +33,7 @@ export const siteConfig = {
     description: [
       "Hi, I'm Runpeng Jian. I'm currently pursuing my Master's in Computer Science at UC San Diego, specializing in AI.",
       "I'm passionate about software engineering – building robust, scalable applications and solving complex problems through clean code. I also have a strong interest in machine learning, especially integrating AI capabilities into real-world software systems. I love turning ideas into working projects, whether it's full-stack applications or ML solutions. ",
-      "When I'm not coding, you'll find me hiking, playing basketball, gaming, or watching movies."
+      "When I'm not coding, you'll find me hiking, playing basketball, gaming, exploring new places, or watching movies."
     ]
   },
 
