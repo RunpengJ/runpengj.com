@@ -8,7 +8,7 @@ const ExperienceCard = ({ experience, index }) => {
 
   return (
     <div className="flex-shrink-0 w-80 md:w-72 lg:w-80 group">
-      <div className="relative bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300 h-full overflow-hidden">
+      <div className="relative bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm dark:shadow-lg dark:shadow-black/10 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-black/20 transition-all duration-300 h-full overflow-hidden">
         {/* Experience number in background */}
         <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100 dark:text-gray-700 opacity-30 select-none pointer-events-none">
           {experienceNumber}
