@@ -23,7 +23,7 @@ export const experiences = [
   {
     id: 4,
     date: "Sep 2022 - Jun 2023",
-    role: "Undergraduate Research Assistant",
+    role: "Undergraduate Research Student",
     company: "Ujima Lab, UC San Diego",
     location: "San Diego, CA"
   },

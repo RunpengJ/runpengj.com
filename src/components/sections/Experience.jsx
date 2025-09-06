@@ -53,64 +53,109 @@ ExperienceCard.propTypes = {
 const Experience = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(1);
+  const [actualVisibleCards, setActualVisibleCards] = useState(1);
   const carouselRef = useRef(null);
+  const containerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Calculate cards per view based on viewport
+  // Calculate cards per view based on viewport and actual container width
   useEffect(() => {
     const updateCardsPerView = () => {
       const width = window.innerWidth;
+      let baseCardsPerView;
+      
       if (width >= 1280) {
-        setCardsPerView(4);
+        baseCardsPerView = 4;
       } else if (width >= 1024) {
-        setCardsPerView(3);
+        baseCardsPerView = 3;
       } else if (width >= 768) {
-        setCardsPerView(2);
+        baseCardsPerView = 2;
       } else {
-        setCardsPerView(1);
+        baseCardsPerView = 1;
+      }
+      
+      setCardsPerView(baseCardsPerView);
+      
+      // Calculate actual visible cards based on container width
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const cardWidth = 320; // Fixed card width
+        const gap = 24; // Gap between cards
+        
+        // Calculate how many complete cards can fit
+        const completeCards = Math.floor((containerWidth + gap) / (cardWidth + gap));
+        setActualVisibleCards(Math.max(1, Math.min(completeCards, experiences.length)));
+      } else {
+        setActualVisibleCards(baseCardsPerView);
       }
     };
 
     updateCardsPerView();
     window.addEventListener('resize', updateCardsPerView);
-    return () => window.removeEventListener('resize', updateCardsPerView);
+    
+    // Also update when component mounts and container is available
+    const timer = setTimeout(updateCardsPerView, 100);
+    
+    return () => {
+      window.removeEventListener('resize', updateCardsPerView);
+      clearTimeout(timer);
+    };
   }, []);
 
+  // Calculate total pages based on actual visible cards
+  const totalPages = Math.ceil(experiences.length / actualVisibleCards);
+  
+  // The last position should ensure the last card is fully visible
+  const maxStartIndex = Math.max(0, experiences.length - actualVisibleCards);
+  
   // Update scroll button states  
   const updateScrollButtons = () => {
     setCanScrollLeft(currentIndex > 0);
-    // Calculate max scroll position to ensure last card is fully visible
-    const maxScrollIndex = Math.max(0, experiences.length - cardsPerView);
-    setCanScrollRight(currentIndex < maxScrollIndex);
+    // Allow scrolling right if we haven't reached the position where last card is visible
+    setCanScrollRight(currentIndex + actualVisibleCards < experiences.length);
   };
 
   useEffect(() => {
     updateScrollButtons();
-  }, [currentIndex, cardsPerView]);
+  }, [currentIndex, maxStartIndex]);
 
   const scrollLeft = () => {
     if (canScrollLeft) {
-      setCurrentIndex(prev => Math.max(0, prev - 1));
+      setCurrentIndex(prev => Math.max(0, prev - actualVisibleCards));
     }
   };
 
   const scrollRight = () => {
     if (canScrollRight) {
-      const maxScrollIndex = Math.max(0, experiences.length - cardsPerView);
-      setCurrentIndex(prev => Math.min(maxScrollIndex, prev + 1));
+      // Move by actualVisibleCards, but ensure we don't go beyond showing all remaining cards
+      const nextIndex = currentIndex + actualVisibleCards;
+      const maxIndex = Math.max(0, experiences.length - actualVisibleCards);
+      setCurrentIndex(Math.min(nextIndex, maxIndex));
     }
   };
 
-  const goToExperience = (index) => {
-    // Ensure the selected experience is visible by calculating the best scroll position
-    const maxScrollIndex = Math.max(0, experiences.length - cardsPerView);
-    const targetIndex = Math.min(index, maxScrollIndex);
-    setCurrentIndex(targetIndex);
+  const goToPage = (pageIndex) => {
+    const targetIndex = pageIndex * actualVisibleCards;
+    const maxIndex = Math.max(0, experiences.length - actualVisibleCards);
+    setCurrentIndex(Math.min(targetIndex, maxIndex));
   };
 
+  // Calculate current page for dot indicators
+  const getCurrentPageIndex = () => {
+    // If we're at the maximum scroll position (showing last cards), show last dot
+    const maxIndex = Math.max(0, experiences.length - actualVisibleCards);
+    if (currentIndex >= maxIndex) {
+      return totalPages - 1;
+    }
+    // Otherwise, calculate normally
+    return Math.floor(currentIndex / actualVisibleCards);
+  };
+  
+  const currentPageIndex = getCurrentPageIndex();
+
   return (
-    <Section id="experience" title="Experience" maxWidth="max-w-7xl">
+    <Section id="experience" title="Experience" background="gray" maxWidth="max-w-7xl">
       <div className="relative">
         {/* Navigation arrows */}
         {experiences.length > cardsPerView && (
@@ -146,10 +191,10 @@ const Experience = () => {
         )}
 
         {/* Carousel container */}
-        <div className="overflow-hidden mx-12">
+        <div className="overflow-hidden mx-12" ref={containerRef}>
           <div 
             ref={carouselRef}
-            className="flex gap-6 transition-transform duration-500 ease-out pl-2 pr-2"
+            className="flex gap-6 transition-transform duration-500 ease-out"
             style={{ 
               transform: `translateX(-${currentIndex * (320 + 24)}px)`
             }}
@@ -164,19 +209,19 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Dot indicators - One dot per experience */}
-        {experiences.length > 1 && (
+        {/* Dot indicators - One dot per page */}
+        {totalPages > 1 && (
           <div className="flex justify-center gap-1.5 mt-8">
-            {experiences.map((_, index) => (
+            {Array.from({ length: totalPages }, (_, index) => (
               <button
                 key={index}
-                onClick={() => goToExperience(index)}
+                onClick={() => goToPage(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                  index === currentIndex
+                  index === currentPageIndex
                     ? 'bg-gray-700 dark:bg-gray-300 w-8'
                     : 'bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-500'
                 }`}
-                aria-label={`Go to experience ${index + 1}`}
+                aria-label={`Go to page ${index + 1}`}
               />
             ))}
           </div>
