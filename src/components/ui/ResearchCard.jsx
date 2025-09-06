@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 /**
  * Research card component with detailed academic layout
  */
-const ResearchCard = ({ title, description, authors, venue, year, status, links = {}, className = "" }) => {
+const ResearchCard = ({ title, description, authors, venue, year, links = {}, className = "" }) => {
   return (
     <div className={`bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-sm dark:shadow-lg dark:shadow-black/10 hover:shadow-md dark:hover:shadow-lg dark:hover:shadow-black/20 transition-all duration-300 ${className}`}>
       <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100 leading-tight transition-colors duration-300">{title}</h3>
@@ -77,7 +77,6 @@ ResearchCard.propTypes = {
   authors: PropTypes.string,
   venue: PropTypes.string,
   year: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  status: PropTypes.string,
   links: PropTypes.shape({
     paper: PropTypes.string,
     poster: PropTypes.string,

@@ -29,6 +29,7 @@ const About = () => {
     <Section 
       id="about" 
       title={siteConfig.about.title}
+      background="gray"
       maxWidth="max-w-5xl"
     >
       <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 xl:gap-16">

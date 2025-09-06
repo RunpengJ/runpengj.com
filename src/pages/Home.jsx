@@ -5,7 +5,7 @@ import Experience from '../components/sections/Experience';
 import Projects from '../components/sections/Projects';
 import Research from '../components/sections/Research';
 import SkillsSection from '../components/sections/Skills';
-import Contact from '../components/sections/Contact';
+import Footer from '../components/layout/Footer';
 
 /**
  * Home page component - Assembles all sections of the portfolio
@@ -19,7 +19,7 @@ const Home = () => {
       <Projects />
       <Research />
       <SkillsSection />
-      <Contact />
+      <Footer />
     </Layout>
   );
 };

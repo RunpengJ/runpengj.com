@@ -155,7 +155,7 @@ const Experience = () => {
   const currentPageIndex = getCurrentPageIndex();
 
   return (
-    <Section id="experience" title="Experience" background="gray" maxWidth="max-w-7xl">
+    <Section id="experience" title="Experience" background="white" maxWidth="max-w-7xl">
       <div className="relative">
         {/* Navigation arrows */}
         {experiences.length > cardsPerView && (
