@@ -17,7 +17,7 @@ export const siteConfig = {
   socialLinks: {
     github: "https://github.com/RunpengJ",
     linkedin: "https://www.linkedin.com/in/runpengjian/",
-    twitter: "https://twitter.com/runpengjian",
+    twitter: "https://x.com/RunpengJ",
     email: "runpengj@gmail.com"
   },
   
