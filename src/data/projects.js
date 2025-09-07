@@ -5,7 +5,8 @@ export const projects = [
     title: "Personal Portfolio Website",
     description: "Responsive portfolio website built with React and Tailwind CSS, featuring sections for About, Experience, Projects, Research, and Skills. Deployed with GitHub Pages.",
     tags: ["React", "Tailwind CSS", "Vite"],
-    githubUrl: "https://runpengj.github.io/",
+    githubUrl: "https://github.com/RunpengJ/runpengj.github.io",
+    liveUrl: "https://runpengj.github.io/",
     cover: "/projects/portfolio.png"
   },
   {
