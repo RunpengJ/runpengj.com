@@ -19,6 +19,15 @@ export const projects = [
     cover: ""
   },
   {
+    id: 9,
+    title: "Retrieval-Augmented Generation for Meeting Summarization",
+    description: "Improved retrieval accuracy by implementing a ColBERT-based retriever, achieving a 30% boost over the bi-encoder baseline. Enhanced response generation with Chain-of-Thought prompting and T5 models, 3× increase in ROUGE-1 score for query-focused summarization.",
+    tags: ["FAISS", "LangChain", "ColBERT", "T5", "NLP"],
+    githubUrl: "https://github.com/RunpengJ/RAG-for-Query-Focused-Meeting-Summarizations",
+    liveUrl: null,
+    cover: "/projects/rag_qsum.png"
+  },
+  {
     id: 6,
     title: "Image Synthesis with Diffusion Models",
     description: "Fine-tuned Stable Diffusion models for character generation using DreamBooth technique. Achieved 15% improvement in output diversity and clarity.",
