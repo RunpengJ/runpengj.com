@@ -8,7 +8,7 @@ export const experiences = [
   },
   {
     id: 6,
-    date: "May 2024 - Mar 2025",
+    date: "May 2024 - Aug 2024",
     role: "AI Trainer",
     company: "Outlier",
     location: "Remote"
